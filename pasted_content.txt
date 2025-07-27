@@ -1,0 +1,57 @@
+You are an expert full-stack developer and UI/UX designer tasked with building "Deal Galaxy," a production-ready Amazon.in affiliate-deals web application that strictly sources all live data from Amazon.in and includes the provided affiliate tag. The application consists of a backend microservice and a modern frontend as specified below.
+
+Backend: Amazon Product Scraper Microservice
+- Implement a standalone Node.js microservice using Puppeteer, Playwright, or Selenium.
+- Support traditional user authentication via email and password.
+- Use PostgreSQL for data storage with schemas for Users, DealsCache, TrackedProducts, and BlogPosts.
+- Develop API endpoints:
+  - GET /api/deals?limit=&offset= : Returns JSON with live deals, including fetchedAt timestamp and deals array.
+  - POST /api/track : Accepts an Amazon URL or keyword; returns real-time data including current price, image, and metadata.
+  - GET /api/track/:userId : Returns tracked products for a given user.
+- Implement proxy rotation using robust free-proxy providers with retry and error handling to maintain scraper reliability.
+- Scrape and retrieve titles, prices, images, discounts, and search suggestions in real-time from Amazon.in.
+- Ensure scraper latency meets the user-defined max threshold.
+- Enable appropriate CORS headers to allow frontend direct consumption.
+
+Frontend: Modern, Clean & Polished UI
+- Use React with Tailwind CSS, Framer Motion, and Poppins font.
+- Use Amazon-orange accent color #FF9900.
+- Layout:
+  - Header: Logo left, navigation links (Deals, Price Tracker, Blog, Login), Sign Up button right.
+  - Footer: About, Privacy, Affiliate Disclosure, Social icons, and ©2025 copyright.
+- Sections:
+  1. Hero: Title "Discover & Track the Hottest Amazon Deals" with subhead and CTAs [Get Started], [See Demo], featuring glassmorphic abstract shapes.
+  2. Metrics Bar: Four styled stats with icons (e.g., “200+ Brands,” “97% Happy Users,” "3m+ Savings").
+  3. Deals Dashboard: Infinite-scroll glass cards grid showing image, title, price, discount badge; buttons [Copy Link] and [Buy Now] linking with affiliate tag; hover effects with lift and shine; display "Last fetched" timestamp.
+  4. Price Tracker: Search bar with Amazon real-time autocomplete using scraper data; accepts URL or keyword; shows matched list with [Track] toggle; sidebar filters for category, price range, discount percentage.
+  5. Blog: SEO-friendly posts grid from specified CMS; display Amazon images, titles, excerpts, with [Read More].
+  6. User Dashboard: Summary cards (Tracked Items, Alerts Sent, Total Savings); table of tracked products with current vs. target price, status, and option to [Remove].
+
+Data & DevOps
+- Define and implement database schema: Users, DealsCache, TrackedProducts, BlogPosts.
+- Organize backend and frontend folder structures clearly, componentized React/Tailwind components (e.g., Hero, Metrics, CardGrid).
+- Create Dockerfiles for frontend and backend.
+- Setup GitHub Actions CI/CD workflows for automated testing and deployment.
+- Ensure absolutely no mock data usage; all displayed data must be live from Amazon.in with the user's affiliate tag included in all deal links.
+
+Deliver a pixel-perfect, production-grade web application implementing all the above requirements accurately and efficiently. Prioritize code quality, scalability, error handling, user experience, and complete integration of live Amazon data.
+
+# Steps
+1. Architect backend microservice with scraper, proxy rotation, DB schemas, and API endpoints.
+2. Build frontend UI following specified designs and React/Tailwind componentization.
+3. Connect frontend and backend with proper API consumption and CORS.
+4. Implement authentication and user dashboards.
+5. Integrate blog fetching from specified CMS.
+6. Containerize and configure CI/CD pipeline.
+7. Thoroughly test all components with live Amazon data.
+
+# Output Format
+Provide all source code and configuration files necessary for deployment, including:
+- Complete backend Node.js scraper microservice with proxy rotation
+- React frontend with Tailwind CSS and Framer Motion components
+- Dockerfiles for backend and frontend
+- Database schema definitions and migrations
+- GitHub Actions CI/CD workflow files
+- Documentation describing setup, deployment, and usage
+
+Ensure code is clean, well-commented, and production-ready with no use of mock data.

@@ -1,0 +1,38 @@
+{
+  "name": "deal-galaxy-backend",
+  "version": "1.0.0",
+  "description": "Deal Galaxy Amazon Affiliate Deals Backend API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "db:init": "node -e \"require('./database/connection').initializeDatabase()\"",
+    "db:test": "node -e \"require('./database/connection').testConnection()\""
+  },
+  "keywords": ["amazon", "deals", "affiliate", "scraping", "api"],
+  "author": "Deal Galaxy Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "node-cron": "^4.2.1",
+    "pg": "^8.16.3",
+    "puppeteer": "^24.15.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
+  }
+}
+
